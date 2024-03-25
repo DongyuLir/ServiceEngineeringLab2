@@ -2,4 +2,13 @@ server:
   port: 16001
 spring:
   application:
-    name: 'consumer-server'
+    name: 'consumer-server-2'
+eureka: #这里都是发给服务注册中心看的
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    lease-renewal-interval-in-seconds: 5 #5秒时间，互动一次，sayHi
+    lease-expiration-duration-in-seconds: 15 #
+  client:
+    service-url: #最重要的是这一个，是我们在18000Eureka中设置的地址。告诉这个微服务应该向哪一个为服务中心去注册。
+      defaultZone: "http://localhost:18000/eureka/"

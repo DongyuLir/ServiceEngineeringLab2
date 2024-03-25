@@ -11,6 +11,8 @@
     <module>Service_Consumer_16000</module>
     <module>Service_Provider_11001</module>
     <module>Service_Consumer_16001</module>
+    <module>Eureka_Server_18000</module>
+      <module>Eureka_Server_18001</module>
   </modules>
 
   <!--统一Java版本和编码方式-->

@@ -1,0 +1,13 @@
+server:
+  port: 18000
+
+eureka:
+  instance:
+    hostname: "localhost"
+  client:
+    register-with-eureka: false
+    fetch-registry: false #
+    service-url:
+      defaultZone: "http://${eureka.instance.hostname}:${server.port}/eureka/" #使用$符号来表示变量
+  server:
+    enable-self-preservation: false

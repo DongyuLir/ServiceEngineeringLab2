@@ -11,7 +11,7 @@ public class UserController {
     public CommonResult<User> getUserById(@PathVariable("userId") Integer userId){
         CommonResult<User> result = new CommonResult<>();
         Integer code = 200;
-        String message = "success(11000)";
+        String message = "success(11000)/getUserById/{userId}";
         try{
             User u = new User(userId, "小明", "123456");
             result.setResult(u);
@@ -31,29 +31,9 @@ public class UserController {
         //ResquestBody需要发送json格式
         CommonResult<User> result = new CommonResult<>();
         Integer code = 200;
-        String message = "success(11000)";
+        String message = "success(11000)/saveUserByRequestBody";
         try{
             result.setResult(user);
-        }
-        catch(Exception e){
-            code = 500;
-            message = "failed";
-        }
-        result.setMessage(message);
-        result.setCode(code);
-        System.out.println(11000);
-        return result;
-    }
-
-
-    @PostMapping("/saveUserByRequestParam")
-    public CommonResult<User> saveUserByRequestParam(@RequestParam("userId") Integer userId){
-        CommonResult<User> result = new CommonResult<>();
-        Integer code = 200;
-        String message = "success(11000)";
-        try{
-            User u = new User(userId, "小明", "123456");
-            result.setResult(u);
         }
         catch(Exception e){
             code = 500;
@@ -70,7 +50,7 @@ public class UserController {
         //ResquestBody需要发送json格式
         CommonResult<User> result = new CommonResult<>();
         Integer code = 200;
-        String message = "success(11000)";
+        String message = "success(11000)putUser";
         try{
             result.setResult(user);
         }
@@ -80,7 +60,7 @@ public class UserController {
         }
         result.setMessage(message);
         result.setCode(code);
-        System.out.println(11000);
+        System.out.println(11000+"putUser");
         return result;
     }
 
@@ -88,7 +68,7 @@ public class UserController {
     public CommonResult<User> deleteUserById(@PathVariable("userId") Integer userId){
         CommonResult<User> result = new CommonResult<>();
         Integer code = 200;
-        String message = "success(11000)";
+        String message = "success(11000)/deleteUserById/{userId}";
         try{
             User u = new User(userId, "小明(delete)", "123456");
             result.setResult(u);
@@ -99,7 +79,7 @@ public class UserController {
         }
         result.setMessage(message);
         result.setCode(code);
-        System.out.println(11000);
+        System.out.println(11000+"/deleteUserById/{userId}");
         return result;
     }
 }

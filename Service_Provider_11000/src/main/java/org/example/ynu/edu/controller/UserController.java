@@ -86,8 +86,6 @@ public class UserController {
 
     @DeleteMapping("/deleteUserById/{userId}")
     public CommonResult<User> deleteUserById(@PathVariable("userId") Integer userId){
-        //@RequestParam("userId") Integer userId，这个括号里面一定要标明是userId
-        //使用apifox测试时，需要通过param来测试
         CommonResult<User> result = new CommonResult<>();
         Integer code = 200;
         String message = "success(11000)";
